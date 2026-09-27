@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#111827">
+  <title>KJI Dojo Pangandaran - Digital Check List Book</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- LOGIN -->
+  <div id="loginScreen" class="login-screen">
+    <div class="login-card">
+      <img src="assets/logo-dojo.png" class="login-logo" alt="Logo KJI Dojo Pangandaran">
+      <h1>KJI DOJO PANGANDARAN</h1>
+      <p class="login-subtitle">DIGITAL CHECK LIST BOOK</p>
+
+      <form id="loginForm">
+        <label for="loginUser">Username</label>
+        <input id="loginUser" type="text" autocomplete="username" placeholder="Username" required>
+
+        <label for="loginPass">Password</label>
+        <input id="loginPass" type="password" autocomplete="current-password" placeholder="Password" required>
+
+        <button class="login-btn" type="submit">🔐 Masuk</button>
+        <div id="loginError" class="login-error"></div>
+      </form>
+
+      <div class="login-info">
+        <strong>Login awal:</strong><br>
+        Username: <code>admin</code><br>
+        Password: <code>kji12345</code>
+      </div>
+      <small class="security-note">
+        Catatan: GitHub Pages adalah hosting statis. Login ini cocok untuk akses aplikasi sederhana,
+        bukan untuk menyimpan data rahasia/keamanan tingkat tinggi.
+      </small>
+    </div>
+  </div>
+
+  <!-- APP -->
+  <div id="appScreen" class="hidden">
+    <header class="hero">
+      <div class="container">
+        <div class="brand">
+          <img src="assets/logo-dojo.png" class="header-logo" alt="Logo KJI Dojo Pangandaran">
+          <div>
+            <h1>KJI DOJO PANGANDARAN</h1>
+            <p>DIGITAL CHECK LIST BOOK • JU-JITSU TRAINING OF KOPORYU</p>
+          </div>
+          <button id="logoutBtn" class="logout-btn">Keluar</button>
+        </div>
+        <div class="student-box">
+          <div>
+            <label>Nama Kohai</label>
+            <input id="studentName" type="text" placeholder="Masukkan nama">
+          </div>
+          <div>
+            <label>Tingkatan / Sabuk</label>
+            <select id="belt">
+              <option value="">Pilih sabuk</option>
+              <option>Kyu 7 - Putih</option>
+              <option>Kyu 6 - Kuning</option>
+              <option>Kyu 5 - Hijau</option>
+              <option>Kyu 4 - Biru Ban Satu</option>
+              <option>Kyu 3 - Biru Ban Dua</option>
+              <option>Kyu 2 - Jingga/Orange</option>
+              <option>Kyu 1 - Coklat</option>
+              <option>DAN - Hitam</option>
+            </select>
+          </div>
+          <div>
+            <label>Alamat</label>
+            <input id="studentAddress" type="text" placeholder="Alamat">
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="toolbar">
+        <input id="search" type="search" placeholder="🔎 Cari materi...">
+        <select id="sectionFilter">
+          <option value="all">Semua bagian</option>
+        </select>
+        <button id="resetBtn" class="btn danger">Reset Checklist</button>
+        <button id="printBtn" class="btn">🖨 Cetak</button>
+      </section>
+
+      <section class="progress-card">
+        <div class="progress-head">
+          <div>
+            <span class="eyebrow">PROGRESS KESELURUHAN</span>
+            <strong id="progressPercent">0%</strong>
+          </div>
+          <span id="progressText">0 / 0 materi dikuasai</span>
+        </div>
+        <div class="progress"><div id="progressBar"></div></div>
+        <div class="summary" id="summary"></div>
+      </section>
+
+      <section class="legend">
+        <span class="legend-title">Status:</span>
+        <span class="status-chip s-unlearned">○ Belum Dipelajari</span>
+        <span class="status-chip s-learning">◐ Sedang Dipelajari</span>
+        <span class="status-chip s-enough">✓ Cukup</span>
+        <span class="status-chip s-mastered">☑ Dikuasai</span>
+        <span class="status-chip s-poor">! Kurang</span>
+      </section>
+
+      <div id="materials"></div>
+    </main>
+
+    <footer>
+      <p>KJI Dojo Pangandaran • Digital Check List Book</p>
+      <small>Data tersimpan otomatis di browser perangkat ini.</small>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
